@@ -50,8 +50,6 @@ open class ZLImagePreviewController: UIViewController {
     
     let showBottomView: Bool
     
-    var currentIndex: Int
-    
     var indexBeforOrientationChanged: Int
     
     var collectionView: UICollectionView!
@@ -68,15 +66,18 @@ open class ZLImagePreviewController: UIViewController {
     
     var bottomBlurView: UIVisualEffectView?
     
-    var doneBtn: UIButton!
-    
     var isFirstAppear = true
     
     var hideNavView = false
     
     var orientation: UIInterfaceOrientation = .unknown
     
-    public var bottomView: UIView!
+    /// public
+    public private(set) var currentIndex: Int
+    
+    public private(set) var doneBtn: UIButton!
+    
+    public private(set) var bottomView: UIView!
     
     @objc public var doneBlock: ( ([Any]) -> Void )?
     
