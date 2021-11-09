@@ -32,7 +32,7 @@ import Photos
     case video
 }
 
-public class ZLImagePreviewController: UIViewController {
+open class ZLImagePreviewController: UIViewController {
 
     static let colItemSpacing: CGFloat = 40
     
@@ -66,8 +66,6 @@ public class ZLImagePreviewController: UIViewController {
     
     var selectBtn: UIButton!
     
-    var bottomView: UIView!
-    
     var bottomBlurView: UIVisualEffectView?
     
     var doneBtn: UIButton!
@@ -77,6 +75,8 @@ public class ZLImagePreviewController: UIViewController {
     var hideNavView = false
     
     var orientation: UIInterfaceOrientation = .unknown
+    
+    public var bottomView: UIView!
     
     @objc public var doneBlock: ( ([Any]) -> Void )?
     
@@ -118,11 +118,11 @@ public class ZLImagePreviewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupUI()
@@ -179,7 +179,7 @@ public class ZLImagePreviewController: UIViewController {
         }
     }
     
-    func reloadCurrentCell() {
+    public func reloadCurrentCell() {
         guard let cell = self.collectionView.cellForItem(at: IndexPath(row: self.currentIndex, section: 0)) else {
             return
         }
@@ -272,7 +272,7 @@ public class ZLImagePreviewController: UIViewController {
         self.view.bringSubviewToFront(self.navView)
     }
     
-    func resetSubViewStatus() {
+    public func resetSubViewStatus() {
         self.indexLabel.text = String(self.currentIndex + 1) + " / " + String(self.datas.count)
         
         if self.showSelectBtn {
@@ -284,7 +284,7 @@ public class ZLImagePreviewController: UIViewController {
         self.resetBottomViewFrame()
     }
     
-    func resetBottomViewFrame() {
+    open func resetBottomViewFrame() {
         if self.showBottomView {
             let btnY: CGFloat = ZLLayout.bottomToolBtnY
             
