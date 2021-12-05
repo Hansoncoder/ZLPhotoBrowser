@@ -79,6 +79,8 @@ open class ZLImagePreviewController: UIViewController {
     
     public private(set) var bottomView: UIView!
     
+    @objc public var longPressBlock: ( (Any) -> Void )?
+    
     @objc public var doneBlock: ( ([Any]) -> Void )?
     
     @objc public var videoHttpHeader: [String: Any]?
@@ -506,6 +508,13 @@ extension ZLImagePreviewController: UICollectionViewDataSource, UICollectionView
         }
         
         (baseCell as? ZLLocalImagePreviewCell)?.longPressBlock = { [weak self] in
+            if let block = self?.longPressBlock {
+                guard let cell = self?.collectionView.cellForItem(at: IndexPath(row: self!.currentIndex, section: 0)) as? ZLLocalImagePreviewCell, let image = cell.currentImage else {
+                    return
+                }
+                block(image)
+                return
+            }
             self?.showSaveImageAlert()
         }
         
