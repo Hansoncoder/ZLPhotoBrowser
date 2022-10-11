@@ -1,6 +1,136 @@
-# Update Log
+# Change Log
 
 -----
+
+## [4.3.7](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.7) (2022-09-28)
+
+## Add:
+* Modify the parameter type of `selectImageBlock` and use `ZLResultModel` for callback. Delete `shouldAnialysisAsset` property.
+* Photo editor adapts to iPad.
+* Arabic supported. @LastSoul
+* Support redo in graffiti and mosaic tools.
+* Support for modifying the tint color of the image editor icon.
+
+## Fix:
+* Fix the bug of getting the wrong version of the video when editing the video.
+
+---
+
+## [4.3.6](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.6) (2022-09-06)
+
+## Add:
+* Provide a method to save the PHAsset to local.
+* Updated the method of parsing GIF.[#752](https://github.com/longitachi/ZLPhotoBrowser/issues/752)
+
+## Fix:
+* Fixed crash in pop interactive transition.[#753](https://github.com/longitachi/ZLPhotoBrowser/issues/753)
+
+---
+
+## [4.3.5](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.5) (2022-07-07)
+
+## Add:
+* Support custom alert style.
+* Improve the experience of image editor.
+
+---
+
+## [4.3.4](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.4) (2022-06-27)
+
+## Fix:
+* Fix a bug of the image editor.
+
+---
+
+## [4.3.3](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.3) (2022-06-21)
+### Add:
+* Adjust loading progress hud style to make it prettier.
+* Add wrapper for ZLPhotoBrowser compatible types.
+* Support for requesting original images when 'allowSelectOriginal = false'.
+
+---
+
+## [4.3.2](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.2) (2022-05-25)
+### Add:
+* Add Tolerance in Video Editing.
+* Format code style.
+  
+### Fix:
+* Fix some bugs when iOS14 album permissions are limited.
+
+---
+
+## [4.3.1 - 4.3.0 Patch](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.1) (2022-04-28)
+### Add:
+* Remove deprecated properties. 
+* Moved some UI related properties to ZLPhotoUIConfiguration.
+* Add ZLEnlargeButton class instead of extending UIControl to enlarge button click area.
+* Add fade animation when taking photos.
+
+---
+
+## [4.3.0 - Beta](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.3.0) (2022-04-19)
+### Add:
+* Turkish supported.[#712](https://github.com/longitachi/ZLPhotoBrowser/pull/712)
+* Separate UI-related properties such as color, text, font, and image from ZLPhotoConfiguration and put them in ZLPhotoUIConfiguration.
+* Change 'ZLPhotoThemeColorDeploy' to 'ZLPhotoColorConfiguration'.
+* Add some properties to edit configuration to support Objective-C.
+* Add some customize color properties.
+* Add long press callback in ZLImagePreviewController.
+* Add property to allow user to do something before select photo result callback.
+
+---
+
+## [4.2.5](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.5) (2022-03-21)
+### Fix:
+* Fix the bug of failing to archive with Xcode 13.3.[#699](https://github.com/longitachi/ZLPhotoBrowser/issues/699)
+
+---
+
+## [4.2.4](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.4) (2022-03-14)
+### Fix:
+* Fixes the bug when select the original photo in the preview.
+
+---
+
+## [4.2.3](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.3) (2022-03-07)
+### Add:
+* Done button title color can be defined separately.
+
+---
+
+## [4.2.2](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.2) (2022-01-13)
+### Add:
+* Support Spanish and Portuguese.[#677](https://github.com/longitachi/ZLPhotoBrowser/pull/677)
+  
+### Fix:
+* Fix the crash when UIAlertController is displayed on iPad.
+
+---
+
+## [4.2.1](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.1) (2021-12-22)
+### Add:
+* Support adjusting the brightness and contrast and saturation of an image.[#673](https://github.com/longitachi/ZLPhotoBrowser/pull/673)
+* Support Indonesian.
+* Add ZLEditImageConfiguration class to configuration the image editor.
+  
+### Fix:
+* Crash when calling showPhotoLibrary in UISplitViewController.[#671](https://github.com/longitachi/ZLPhotoBrowser/issues/671)
+
+---
+
+## [4.2.0](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.2.0) (2021-11-24)
+### Add:
+* Add chained calls.
+* Optmize the custom camera code.
+* Add image style of cancel button.
+  
+### Fix:
+* Selected video duplicates after editing mode.[#655](https://github.com/longitachi/ZLPhotoBrowser/issues/655)
+* Unable to deselect photos under certain conditions.[#659](https://github.com/longitachi/ZLPhotoBrowser/issues/659)
+
+---
+
 ## [4.1.9](https://github.com/longitachi/ZLPhotoBrowser/releases/tag/4.1.9) (2021-09-27)
 ### Fix:
 * Remove CallKit because it resulted in rejection of app review.[#650](https://github.com/longitachi/ZLPhotoBrowser/issues/650)
