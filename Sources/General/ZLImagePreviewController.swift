@@ -49,7 +49,7 @@ open class ZLImagePreviewController: UIViewController {
     
     private let showBottomView: Bool
 
-    private var currentIndex: Int
+    public var currentIndex: Int
     
     private var indexBeforOrientationChanged: Int
     
@@ -108,7 +108,7 @@ open class ZLImagePreviewController: UIViewController {
         return btn
     }()
     
-    private lazy var bottomView: UIView = {
+    open lazy var bottomView: UIView = {
         let view = UIView()
         view.backgroundColor = .zl.bottomToolViewBgColorOfPreviewVC
         return view
@@ -116,7 +116,7 @@ open class ZLImagePreviewController: UIViewController {
     
     private var bottomBlurView: UIVisualEffectView?
     
-    private lazy var doneBtn: UIButton = {
+    open lazy var doneBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = ZLLayout.bottomToolTitleFont
         btn.setTitle(title, for: .normal)
@@ -182,7 +182,7 @@ open class ZLImagePreviewController: UIViewController {
     }
     
     @available(*, unavailable)
-    required init?(coder _: NSCoder) {
+    required public init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
