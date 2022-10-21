@@ -477,7 +477,11 @@ class ZLThumbnailViewController: UIViewController {
             return
         }
         let vc = ZLPhotoPreviewController(photos: nav.arrSelectedModels, index: 0)
-        show(vc, sender: nil)
+        if let nav = self.navigationController {
+            nav.pushViewController(vc, animated: true)
+        } else {
+            show(vc, sender: nil)
+        }
     }
     
     @objc private func originalPhotoClick() {
@@ -1084,7 +1088,12 @@ extension ZLThumbnailViewController: UICollectionViewDataSource, UICollectionVie
         }
         
         let vc = ZLPhotoPreviewController(photos: arrDataSources, index: index)
-        show(vc, sender: nil)
+        if let nav = self.navigationController {
+            nav.pushViewController(vc, animated: true)
+        } else {
+            show(vc, sender: nil)
+        }
+        
     }
     
     private func shouldDirectEdit(_ model: ZLPhotoModel) -> Bool {
